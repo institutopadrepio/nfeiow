@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Instituto Padre Pio"]
   spec.email         = ["padrepauloricardo@padrepauloricardo.org"]
 
-  spec.summary       = 'A simple wrapper of the NFE io API'
-  spec.description   = 'A simple wrapper of the NFE io API'
+  spec.summary       = "A simple wrapper of the NFE io API"
+  spec.description   = "A simple wrapper of the NFE io API"
   spec.homepage      = "https://github.com/institutopadrepio/nfeiow"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
@@ -27,14 +27,14 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'excon', '>= 0.73.0'
+  spec.add_dependency "excon", ">= 0.73.0"
 
   spec.add_development_dependency "bundler", "~> 2.0"
+  spec.add_development_dependency "pry", "~> 0.13.1"
   spec.add_development_dependency "rake",    "~> 12.3.3"
   spec.add_development_dependency "rspec",   "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 1.7"
+  spec.add_development_dependency "solargraph", "~> 0.40"
   spec.add_development_dependency "vcr",     "~> 5.1"
   spec.add_development_dependency "webmock", "~> 3.8"
-  spec.add_development_dependency 'pry', '~> 0.13.1'
-  spec.add_development_dependency 'solargraph', '~> 0.40'
-  spec.add_development_dependency 'rubocop', '~> 1.7'
 end
