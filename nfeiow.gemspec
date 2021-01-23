@@ -12,7 +12,10 @@ Gem::Specification.new do |spec|
   spec.description   = "A simple wrapper of the NFE io API"
   spec.homepage      = "https://github.com/institutopadrepio/nfeiow"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+
+  Gem::Specification.new do |spec|
+    spec.required_ruby_version = ">= 2.3.0"
+  end
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
