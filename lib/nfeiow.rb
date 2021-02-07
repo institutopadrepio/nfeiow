@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "nfeiow/version"
+require_relative 'nfeiow/version'
+require_relative 'nfeiow/helpers'
+require_relative 'nfeiow/client'
 
 module Nfeiow
-  class Error < StandardError; end
-  # Your code goes here...
+  module_function
 end
