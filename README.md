@@ -1,8 +1,6 @@
 # Nfeiow
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nfeiow`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[NFE.io](https://nfe.io) wrapper to create, cancel, download (pdf) and send invoices via email.
 
 ## Installation
 
@@ -22,17 +20,66 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initialize
 
-## Development
+```rb
+client = Nfeiow::Client.new(company_id, api_key)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Connection details
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```rb
+client.connection
+```
 
-## Contributing
+### Create invoice - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_Post)
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nfeiow.
+```rb
+params = {
+    borrower: {
+        federalTaxNumber: '65043222018', # Only numbers
+        name: 'José Anchieta',
+        email: 'anchieta@jose.com',
+        address: {
+        country: 'BRA',
+        postalCode: '86055620', # Only numbers
+        street: 'Rua Ulrico Zuinglio',
+        number: '870',
+        additionalInformation: 'Apto. 550',
+        district: 'Gleba Palhano',
+        city: {
+            code: 4113700,
+            name: 'Londrina'
+        },
+        state: 'PR'
+        }
+    },
+    cityServiceCode: '8599699',
+    cnaeCode: '8599699',
+    description: 'Cursos online.',
+    servicesAmount: 99.9
+}
+
+client.create_invoice(params)
+```
+
+### Cancel invoice - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_Delete)
+
+```rb
+client.cancel_invoice(invoice_id)
+```
+
+### Download invoice (pdf) - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_GetDocumentPdf)
+
+```rb
+client.download_invoice_pdf(invoice_id)
+```
+
+### Send invoice by email - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_SendEmail)
+
+```rb
+client.send_invoice_via_email(invoice_id)
+```
 
 ## License
 
