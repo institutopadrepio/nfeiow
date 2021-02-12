@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.nfe.io/v1/companies/123/serviceinvoices
+    body:
+      encoding: UTF-8
+      string: '{"borrower":{"federalTaxNumber":"65043222018","name":"José Anchieta","email":"anchieta@jose.com","address":{"country":"BRA","postalCode":"86055620","street":"Rua
+        Ulrico Zuinglio","number":"870","additionalInformation":"Apto. 550","district":"Gleba
+        Palhano","city":{"code":4113700,"name":"Londrina"},"state":"PR"}},"cityServiceCode":"8599699","cnaeCode":"8599699","description":"Cursos
+        online.","servicesAmount":99.9}'
+    headers:
+      User-Agent:
+      - excon/0.78.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - we123
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 12 Feb 2021 09:36:41 GMT
+      Location:
+      - http://api.nfe.io:443/v1/companies/5a3d5d97f3ab6912d416b50b/serviceinvoices/60264c29003cad1fdc8e06f0
+      Server:
+      - Kestrel
+      X-Request-Id:
+      - 0HM6DCKOP27CN:00000010
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ew0KICAiaWQiOiAiNjAyNjRjMjkwMDNjYWQxZmRjOGUwNmYwIiwNCiAgImVudmlyb25tZW50IjogIkRldmVsb3BtZW50IiwNCiAgImZsb3dTdGF0dXMiOiAiV2FpdGluZ0NhbGN1bGF0ZVRheGVzIiwNCiAgInByb3ZpZGVyIjogew0KICAgICJ0cmFkZU5hbWUiOiAiVEVTVEUgSU5TVElUVVRPIFBBRFJFIFBJTyIsDQogICAgInRheFJlZ2ltZSI6ICJMdWNyb1ByZXN1bWlkbyIsDQogICAgInNwZWNpYWxUYXhSZWdpbWUiOiAiTmVuaHVtIiwNCiAgICAibGVnYWxOYXR1cmUiOiAiU29jaWVkYWRlRW1wcmVzYXJpYUxpbWl0YWRhIiwNCiAgICAiZWNvbm9taWNBY3Rpdml0aWVzIjogW10sDQogICAgInJlZ2lvbmFsVGF4TnVtYmVyIjogMCwNCiAgICAibXVuaWNpcGFsVGF4TnVtYmVyIjogIjAwMDAwMCIsDQogICAgImlzc1JhdGUiOiAwLjAsDQogICAgInBhcmVudElkIjogIjU4YmRhZjRhMjM1YTc0MTNmYzgzNWJjZiIsDQogICAgImlkIjogIjVhM2Q1ZDk3ZjNhYjY5MTJkNDE2YjUwYiIsDQogICAgIm5hbWUiOiAiVEVTVEUgSU5TVElUVVRPIERFIFNFUlZJQ09TIEVEVUNBQ0lPTkFJUyBFIEZPUk1BVElWT1MgUEFEUkUgUElPIExUREEiLA0KICAgICJmZWRlcmFsVGF4TnVtYmVyIjogNDQyODIxMjEwMDAxNDksDQogICAgImFkZHJlc3MiOiB7DQogICAgICAiY291bnRyeSI6ICIiLA0KICAgICAgInBvc3RhbENvZGUiOiAiODYwMjAtMDQwIiwNCiAgICAgICJzdHJlZXQiOiAiUnVhIFNhbnRvcyIsDQogICAgICAibnVtYmVyIjogIjc5NyIsDQogICAgICAiYWRkaXRpb25hbEluZm9ybWF0aW9uIjogIiIsDQogICAgICAiZGlzdHJpY3QiOiAiQ2VudHJvIiwNCiAgICAgICJjaXR5Ijogew0KICAgICAgICAiY29kZSI6ICI1MTAzNDAzIiwNCiAgICAgICAgIm5hbWUiOiAiQ3VpYWLDoSINCiAgICAgIH0sDQogICAgICAic3RhdGUiOiAiTVQiDQogICAgfSwNCiAgICAic3RhdHVzIjogIkFjdGl2ZSIsDQogICAgInR5cGUiOiAiTGVnYWxQZXJzb24sIENvbXBhbnkiLA0KICAgICJjcmVhdGVkT24iOiAiMjAxNy0xMi0yMlQxOTozMTozNS4yOTkxNjAyKzAwOjAwIiwNCiAgICAibW9kaWZpZWRPbiI6ICIyMDE4LTAxLTAzVDEzOjU4OjUzLjMyMTYzNDIrMDA6MDAiDQogIH0sDQogICJib3Jyb3dlciI6IHsNCiAgICAiaWQiOiAiNjAyNjRjMjkwMDNjYWQxZmRjOGUwNmYyIiwNCiAgICAibmFtZSI6ICJKb3PDqSBBbmNoaWV0YSIsDQogICAgImZlZGVyYWxUYXhOdW1iZXIiOiA2NTA0MzIyMjAxOCwNCiAgICAiZW1haWwiOiAiYW5jaGlldGFAam9zZS5jb20iLA0KICAgICJhZGRyZXNzIjogew0KICAgICAgImNvdW50cnkiOiAiQlJBIiwNCiAgICAgICJwb3N0YWxDb2RlIjogIjg2MDU1NjIwIiwNCiAgICAgICJzdHJlZXQiOiAiUnVhIFVscmljbyBadWluZ2xpbyIsDQogICAgICAibnVtYmVyIjogIjg3MCIsDQogICAgICAiYWRkaXRpb25hbEluZm9ybWF0aW9uIjogIkFwdG8uIDU1MCIsDQogICAgICAiZGlzdHJpY3QiOiAiR2xlYmEgUGFsaGFubyIsDQogICAgICAiY2l0eSI6IHsNCiAgICAgICAgImNvZGUiOiAiNDExMzcwMCIsDQogICAgICAgICJuYW1lIjogIkxvbmRyaW5hIg0KICAgICAgfSwNCiAgICAgICJzdGF0ZSI6ICJQUiINCiAgICB9LA0KICAgICJzdGF0dXMiOiAiQWN0aXZlIiwNCiAgICAidHlwZSI6ICJOYXR1cmFsUGVyc29uIiwNCiAgICAiY3JlYXRlZE9uIjogIjIwMjEtMDItMTJUMDk6MzY6NDEuMjA4Nzc2MiswMDowMCINCiAgfSwNCiAgImJhdGNoTnVtYmVyIjogMCwNCiAgIm51bWJlciI6IDAsDQogICJzdGF0dXMiOiAiQ3JlYXRlZCIsDQogICJycHNUeXBlIjogIlJwcyIsDQogICJycHNTdGF0dXMiOiAiTm9ybWFsIiwNCiAgInRheGF0aW9uVHlwZSI6ICJXaXRoaW5DaXR5IiwNCiAgImlzc3VlZE9uIjogIjIwMjEtMDItMTJUMDY6MzY6NDEuMjA4Nzc2Mi0wMzowMCIsDQogICJycHNTZXJpYWxOdW1iZXIiOiAiSU8iLA0KICAicnBzTnVtYmVyIjogMCwNCiAgImNpdHlTZXJ2aWNlQ29kZSI6ICI4NTk5Njk5IiwNCiAgImRlc2NyaXB0aW9uIjogIkN1cnNvcyBvbmxpbmUuIiwNCiAgInNlcnZpY2VzQW1vdW50IjogOTkuOSwNCiAgImRlZHVjdGlvbnNBbW91bnQiOiAwLjAsDQogICJkaXNjb3VudFVuY29uZGl0aW9uZWRBbW91bnQiOiAwLjAsDQogICJkaXNjb3VudENvbmRpdGlvbmVkQW1vdW50IjogMC4wLA0KICAiYmFzZVRheEFtb3VudCI6IDk5LjksDQogICJpc3NSYXRlIjogMC4wLA0KICAiaXNzVGF4QW1vdW50IjogMC4wLA0KICAiaXJBbW91bnRXaXRoaGVsZCI6IDAuMCwNCiAgInBpc0Ftb3VudFdpdGhoZWxkIjogMC4wLA0KICAiY29maW5zQW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJjc2xsQW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJpbnNzQW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJpc3NBbW91bnRXaXRoaGVsZCI6IDAuMCwNCiAgIm90aGVyc0Ftb3VudFdpdGhoZWxkIjogMC4wLA0KICAiYW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJhbW91bnROZXQiOiA5OS45LA0KICAiYXBwcm94aW1hdGVUYXgiOiB7DQogICAgInRvdGFsUmF0ZSI6IDAuMA0KICB9LA0KICAiY3JlYXRlZE9uIjogIjIwMjEtMDItMTJUMDk6MzY6NDEuMjA4Nzc2MiswMDowMCINCn0=
+    http_version:
+  recorded_at: Fri, 12 Feb 2021 09:36:41 GMT
+- request:
+    method: post
+    uri: https://api.nfe.io/v1/companies/5a3d5d97f3ab6912d416b50b/serviceinvoices
+    body:
+      encoding: UTF-8
+      string: '{"borrower":{"federalTaxNumber":"65043222018","name":"José Anchieta","email":"anchieta@jose.com","address":{"country":"BRA","postalCode":"86055620","street":"Rua
+        Ulrico Zuinglio","number":"870","additionalInformation":"Apto. 550","district":"Gleba
+        Palhano","city":{"code":4113700,"name":"Londrina"},"state":"PR"}},"cityServiceCode":"8599699","cnaeCode":"8599699","description":"Cursos
+        online.","servicesAmount":99.9}'
+    headers:
+      User-Agent:
+      - excon/0.78.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - 4We5URGfxpeBrXq7E8sOc9ErM1JY2gAFOHNqgGhAxAelqJ4jKTIHaziiHWlIRKOGxAH
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 12 Feb 2021 09:36:42 GMT
+      Location:
+      - http://api.nfe.io:443/v1/companies/5a3d5d97f3ab6912d416b50b/serviceinvoices/60264c2a003cad1fdc8e0739
+      Server:
+      - Kestrel
+      X-Request-Id:
+      - 0HM6DCKOP27CN:00000016
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ew0KICAiaWQiOiAiNjAyNjRjMmEwMDNjYWQxZmRjOGUwNzM5IiwNCiAgImVudmlyb25tZW50IjogIkRldmVsb3BtZW50IiwNCiAgImZsb3dTdGF0dXMiOiAiV2FpdGluZ0NhbGN1bGF0ZVRheGVzIiwNCiAgInByb3ZpZGVyIjogew0KICAgICJ0cmFkZU5hbWUiOiAiVEVTVEUgSU5TVElUVVRPIFBBRFJFIFBJTyIsDQogICAgInRheFJlZ2ltZSI6ICJMdWNyb1ByZXN1bWlkbyIsDQogICAgInNwZWNpYWxUYXhSZWdpbWUiOiAiTmVuaHVtIiwNCiAgICAibGVnYWxOYXR1cmUiOiAiU29jaWVkYWRlRW1wcmVzYXJpYUxpbWl0YWRhIiwNCiAgICAiZWNvbm9taWNBY3Rpdml0aWVzIjogW10sDQogICAgInJlZ2lvbmFsVGF4TnVtYmVyIjogMCwNCiAgICAibXVuaWNpcGFsVGF4TnVtYmVyIjogIjAwMDAwMCIsDQogICAgImlzc1JhdGUiOiAwLjAsDQogICAgInBhcmVudElkIjogIjU4YmRhZjRhMjM1YTc0MTNmYzgzNWJjZiIsDQogICAgImlkIjogIjVhM2Q1ZDk3ZjNhYjY5MTJkNDE2YjUwYiIsDQogICAgIm5hbWUiOiAiVEVTVEUgSU5TVElUVVRPIERFIFNFUlZJQ09TIEVEVUNBQ0lPTkFJUyBFIEZPUk1BVElWT1MgUEFEUkUgUElPIExUREEiLA0KICAgICJmZWRlcmFsVGF4TnVtYmVyIjogNDQyODIxMjEwMDAxNDksDQogICAgImFkZHJlc3MiOiB7DQogICAgICAiY291bnRyeSI6ICIiLA0KICAgICAgInBvc3RhbENvZGUiOiAiODYwMjAtMDQwIiwNCiAgICAgICJzdHJlZXQiOiAiUnVhIFNhbnRvcyIsDQogICAgICAibnVtYmVyIjogIjc5NyIsDQogICAgICAiYWRkaXRpb25hbEluZm9ybWF0aW9uIjogIiIsDQogICAgICAiZGlzdHJpY3QiOiAiQ2VudHJvIiwNCiAgICAgICJjaXR5Ijogew0KICAgICAgICAiY29kZSI6ICI1MTAzNDAzIiwNCiAgICAgICAgIm5hbWUiOiAiQ3VpYWLDoSINCiAgICAgIH0sDQogICAgICAic3RhdGUiOiAiTVQiDQogICAgfSwNCiAgICAic3RhdHVzIjogIkFjdGl2ZSIsDQogICAgInR5cGUiOiAiTGVnYWxQZXJzb24sIENvbXBhbnkiLA0KICAgICJjcmVhdGVkT24iOiAiMjAxNy0xMi0yMlQxOTozMTozNS4yOTkxNjAyKzAwOjAwIiwNCiAgICAibW9kaWZpZWRPbiI6ICIyMDE4LTAxLTAzVDEzOjU4OjUzLjMyMTYzNDIrMDA6MDAiDQogIH0sDQogICJib3Jyb3dlciI6IHsNCiAgICAiaWQiOiAiNjAyNjRjMmEwMDNjYWQxZmRjOGUwNzNiIiwNCiAgICAibmFtZSI6ICJKb3PDqSBBbmNoaWV0YSIsDQogICAgImZlZGVyYWxUYXhOdW1iZXIiOiA2NTA0MzIyMjAxOCwNCiAgICAiZW1haWwiOiAiYW5jaGlldGFAam9zZS5jb20iLA0KICAgICJhZGRyZXNzIjogew0KICAgICAgImNvdW50cnkiOiAiQlJBIiwNCiAgICAgICJwb3N0YWxDb2RlIjogIjg2MDU1NjIwIiwNCiAgICAgICJzdHJlZXQiOiAiUnVhIFVscmljbyBadWluZ2xpbyIsDQogICAgICAibnVtYmVyIjogIjg3MCIsDQogICAgICAiYWRkaXRpb25hbEluZm9ybWF0aW9uIjogIkFwdG8uIDU1MCIsDQogICAgICAiZGlzdHJpY3QiOiAiR2xlYmEgUGFsaGFubyIsDQogICAgICAiY2l0eSI6IHsNCiAgICAgICAgImNvZGUiOiAiNDExMzcwMCIsDQogICAgICAgICJuYW1lIjogIkxvbmRyaW5hIg0KICAgICAgfSwNCiAgICAgICJzdGF0ZSI6ICJQUiINCiAgICB9LA0KICAgICJzdGF0dXMiOiAiQWN0aXZlIiwNCiAgICAidHlwZSI6ICJOYXR1cmFsUGVyc29uIiwNCiAgICAiY3JlYXRlZE9uIjogIjIwMjEtMDItMTJUMDk6MzY6NDIuNzAyNjY4NyswMDowMCINCiAgfSwNCiAgImJhdGNoTnVtYmVyIjogMCwNCiAgIm51bWJlciI6IDAsDQogICJzdGF0dXMiOiAiQ3JlYXRlZCIsDQogICJycHNUeXBlIjogIlJwcyIsDQogICJycHNTdGF0dXMiOiAiTm9ybWFsIiwNCiAgInRheGF0aW9uVHlwZSI6ICJXaXRoaW5DaXR5IiwNCiAgImlzc3VlZE9uIjogIjIwMjEtMDItMTJUMDY6MzY6NDIuNzAyNjY4Ny0wMzowMCIsDQogICJycHNTZXJpYWxOdW1iZXIiOiAiSU8iLA0KICAicnBzTnVtYmVyIjogMCwNCiAgImNpdHlTZXJ2aWNlQ29kZSI6ICI4NTk5Njk5IiwNCiAgImRlc2NyaXB0aW9uIjogIkN1cnNvcyBvbmxpbmUuIiwNCiAgInNlcnZpY2VzQW1vdW50IjogOTkuOSwNCiAgImRlZHVjdGlvbnNBbW91bnQiOiAwLjAsDQogICJkaXNjb3VudFVuY29uZGl0aW9uZWRBbW91bnQiOiAwLjAsDQogICJkaXNjb3VudENvbmRpdGlvbmVkQW1vdW50IjogMC4wLA0KICAiYmFzZVRheEFtb3VudCI6IDk5LjksDQogICJpc3NSYXRlIjogMC4wLA0KICAiaXNzVGF4QW1vdW50IjogMC4wLA0KICAiaXJBbW91bnRXaXRoaGVsZCI6IDAuMCwNCiAgInBpc0Ftb3VudFdpdGhoZWxkIjogMC4wLA0KICAiY29maW5zQW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJjc2xsQW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJpbnNzQW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJpc3NBbW91bnRXaXRoaGVsZCI6IDAuMCwNCiAgIm90aGVyc0Ftb3VudFdpdGhoZWxkIjogMC4wLA0KICAiYW1vdW50V2l0aGhlbGQiOiAwLjAsDQogICJhbW91bnROZXQiOiA5OS45LA0KICAiYXBwcm94aW1hdGVUYXgiOiB7DQogICAgInRvdGFsUmF0ZSI6IDAuMA0KICB9LA0KICAiY3JlYXRlZE9uIjogIjIwMjEtMDItMTJUMDk6MzY6NDIuNzAyNjY4NyswMDowMCINCn0=
+    http_version:
+  recorded_at: Fri, 12 Feb 2021 09:36:43 GMT
+recorded_with: VCR 5.1.0
