@@ -23,13 +23,11 @@ Or install it yourself as:
 ### Initialize
 
 ```rb
-client = Nfeiow::Client.new(company_id, api_key)
-```
-
-### Connection details
-
-```rb
-client.connection
+# Create an initializer and configure your nfe_company_id and nfe_api_key
+Nfeiow::ClientConfiguration.configure do |config|
+  config.nfe_company_id = '123'
+  config.nfe_api_key = '123abc'
+end
 ```
 
 ### Create invoice - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_Post)
@@ -60,25 +58,25 @@ params = {
     servicesAmount: 99.9
 }
 
-client.create_invoice(params)
+Nfeiow::Client.new.create_invoice(params)
 ```
 
 ### Cancel invoice - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_Delete)
 
 ```rb
-client.cancel_invoice(invoice_id)
+Nfeiow::Client.new.cancel_invoice(invoice_id)
 ```
 
 ### Download invoice (pdf) - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_GetDocumentPdf)
 
 ```rb
-client.download_invoice_pdf(invoice_id)
+Nfeiow::Client.new.download_invoice_pdf(invoice_id)
 ```
 
 ### Send invoice by email - [Api Reference](https://nfe.io/docs/desenvolvedores/rest-api/nota-fiscal-de-servico-v1/#/ServiceInvoices/ServiceInvoices_SendEmail)
 
 ```rb
-client.send_invoice_via_email(invoice_id)
+Nfeiow::Client.new.send_invoice_via_email(invoice_id)
 ```
 
 ## License
