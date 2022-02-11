@@ -1,31 +1,16 @@
 # frozen_string_literal: true
 
-RSpec.describe Nfeiow::Client do
-  let(:company_id) { '123' }
-  let(:api_key) { 'we123' }
-  subject { described_class.new(company_id, api_key) }
-
-  describe 'includes' do
-    it 'is expected to include helpers' do
-      expect(described_class.ancestors).to include(Nfeiow::Helpers)
+RSpec.describe Nfeiow::Client do # rubocop:disable Metrics/BlockLength
+  before(:each) do
+    Nfeiow::ClientConfiguration.configure do |config|
+      config.nfe_company_id = '123'
+      config.nfe_api_key = '123abc'
     end
   end
 
-  describe 'headers' do
-    let(:expected_headers) do
-      {
-        "Content-Type": 'application/json',
-        'Accept': 'application/json',
-        'Authorization': api_key
-      }
-    end
+  subject { described_class.new }
 
-    it 'has the correct headers' do
-      expect(subject.headers).to eq expected_headers
-    end
-  end
-
-  describe '#create_invoice', :vcr do
+  describe '#create_invoice', :vcr do # rubocop:disable Metrics/BlockLength
     let(:params) do
       {
         borrower: {
@@ -40,7 +25,7 @@ RSpec.describe Nfeiow::Client do
             additionalInformation: 'Apto. 550',
             district: 'Gleba Palhano',
             city: {
-              code: 4113700,
+              code: 4_113_700,
               name: 'Londrina'
             },
             state: 'PR'
@@ -60,14 +45,14 @@ RSpec.describe Nfeiow::Client do
     it 'creates a new invoice and returns the correct result' do
       expect(client.success?).to eq true
       expect(client.error).to eq nil
-      expect(client.value['id']).to eq '60264c29003cad1fdc8e06f0'
+      expect(client.value['id']).to eq '6206f389003cad6df0f36459'
       expect(client.value['status']).to eq 'Created'
       expect(client.value['baseTaxAmount']).to eq 99.9
     end
   end
 
   describe '#cancel_invoice', :vcr do
-    let(:invoice_id) { '60264c29003cad1fdc8e06f0' }
+    let(:invoice_id) { '6206f261003cad6df0f34f8e' }
     let!(:client) do
       subject.cancel_invoice(invoice_id)
     end
@@ -78,9 +63,9 @@ RSpec.describe Nfeiow::Client do
       expect(client.value['flowStatus']).to eq 'WaitingSendCancel'
     end
   end
-  
+
   describe '#download_invoice_pdf', :vcr do
-    let(:invoice_id) { '602653321f8db412f4b3a89a' }
+    let(:invoice_id) { '6206f389003cad6df0f36459' }
     let!(:client) do
       subject.download_invoice_pdf(invoice_id)
     end
@@ -88,12 +73,12 @@ RSpec.describe Nfeiow::Client do
     it 'downloads an invoice and return the correct result' do
       expect(client.success?).to eq true
       expect(client.error).to eq nil
-      expect(client.value).to eq 'https://nfse.blob.core.windows.net/44282121000149/dev/21/NFSE_00002609_MJYW.pdf?sv=2018-03-28&sr=b&sig=8IhdSLvlwa50GqeMCEcol2fsSbCJIoio7gRKWS%2BNmME%3D&st=2021-02-12T09%3A47%3A27Z&se=2021-02-12T10%3A37%3A27Z&sp=r'
+      expect(client.value).to eq 'https://nfse.blob.core.windows.net/44282121000149/dev/22/NFSE_00002800_MJGW.pdf?sv=2018-03-28&sr=b&sig=M%2Fqrj4b1br4LwvjwpVlL2KzVh0dgQsc8FsiUsZ2tX50%3D&st=2022-02-11T23%3A16%3A48Z&se=2022-02-12T00%3A06%3A48Z&sp=r'
     end
   end
 
   describe '#send_invoice_via_email', :vcr do
-    let(:invoice_id) { '602653321f8db412f4b3a89a' }
+    let(:invoice_id) { '6206f389003cad6df0f36459' }
     let!(:client) do
       subject.send_invoice_via_email(invoice_id)
     end
@@ -101,7 +86,7 @@ RSpec.describe Nfeiow::Client do
     it 'sends an invoice to the customer and returns the correct result' do
       expect(client.success?).to eq true
       expect(client.error).to eq nil
-      expect(client.value).to eq "Executed"
+      expect(client.value).to eq 'Executed'
     end
   end
 end
